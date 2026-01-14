@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "pywhisper-cli"
+version = "0.0.5"
+description = "A command-line interface for transcribing and translating audio using local Whisper models"
+authors = ["Vatsal <vatsalaggarwal@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "whisper_cli"}]
+
+[tool.poetry.scripts]
+whisper = "whisper_cli.main:cli"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+click = "^8.1.7"
+pywhispercpp = "^1.4.0"
+numpy = "^1.21.0"
+scipy = "^1.10.0"
+rich = "^13.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
